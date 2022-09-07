@@ -1,8 +1,7 @@
 const request = require("request");
 const fs = require("fs");
 const args = process.argv.slice(2);
-const url = args[0];
-const filePath = args[1];
+const [url, filePath] = args;
 
 const requestAndSaveFile = (url, filePath, functionToRunWhenDone) => {
   request(url, (error, response, body) => {
@@ -18,9 +17,6 @@ const requestAndSaveFile = (url, filePath, functionToRunWhenDone) => {
 
 const writeFile = (filePath, text) => {
   fs.writeFile(filePath, text, (err) => {
-    if (err) {
-      console.error(err);
-    }
     console.log(`Downloaded and saved ${text.length} bytes to ${filePath}`);
   });
 };
