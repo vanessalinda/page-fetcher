@@ -11,6 +11,7 @@ const requestAndSaveFile = (url, filePath, functionToRunWhenDone) => {
       console.log(
         `Unfortunately, your file could not be written because we hit a ${response.statusCode}`
       );
+      return;
     }
   });
 };
