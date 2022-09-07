@@ -16,10 +16,10 @@ const requestAndSaveFile = (url, filePath, functionToRunWhenDone) => {
   });
 };
 
-const writeFile = (filePath, text) => {
+const writeAndSaveFile = (filePath, text) => {
   fs.writeFile(filePath, text, (err) => {
     console.log(`Downloaded and saved ${text.length} bytes to ${filePath}`);
   });
 };
 
-requestAndSaveFile(url, filePath, writeFile);
+requestAndSaveFile(url, filePath, writeAndSaveFile);
